@@ -1,0 +1,32 @@
+{
+    "structures": [
+        {
+            "nutwood": {
+                "max": 2439,
+                "avaliable": 1279,
+                "time_retrieved": 1428544844
+            }
+        },
+        {
+            "state_college": {
+                "max": 1339,
+                "avaliable": 444,
+                "time_retrieved": 1428544844
+            }
+        },
+        {
+            "eastside": {
+                "max": 1365,
+                "avaliable": 0,
+                "time_retrieved": 1428544844
+            }
+        },
+        {
+            "lot_a_g": {
+                "max": 1865,
+                "avaliable": 507,
+                "time_retrieved": 1428544844
+            }
+        }
+    ]
+}
