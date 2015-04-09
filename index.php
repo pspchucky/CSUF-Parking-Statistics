@@ -3,7 +3,7 @@
 	<head>
 		<title>CSUF Parking Database | Graph Test</title>
 		<meta charset="utf-8" />
-		<script type="text/javascript" src="http://www.chartjs.org/assets/Chart.min.js"></script>
+		<script type="text/javascript" src="css/Chart.min.js"></script>
 		<style>
 		* { margin:0; padding:0; } /* to remove the top and left whitespace */
 
