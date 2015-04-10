@@ -3,29 +3,29 @@
         {
             "nutwood": {
                 "max": 2439,
-                "avaliable": 1279,
-                "time_retrieved": 1428544844
+                "avaliable": 1757,
+                "time_retrieved": 1428635910
             }
         },
         {
             "state_college": {
                 "max": 1339,
-                "avaliable": 444,
-                "time_retrieved": 1428544844
+                "avaliable": 639,
+                "time_retrieved": 1428635910
             }
         },
         {
             "eastside": {
                 "max": 1365,
-                "avaliable": 0,
-                "time_retrieved": 1428544844
+                "avaliable": 23,
+                "time_retrieved": 1428635910
             }
         },
         {
             "lot_a_g": {
                 "max": 1865,
                 "avaliable": 507,
-                "time_retrieved": 1428544844
+                "time_retrieved": 1428635910
             }
         }
     ]

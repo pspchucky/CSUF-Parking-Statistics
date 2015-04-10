@@ -21,9 +21,21 @@ $structures = array('Nutwood Structure','State College Structure','Eastside Stru
 $json_structures = array('nutwood','state_college','eastside','lot_a_g');
 $max_caps = array(2439,1339,1365,1865);
 $counts = array();
-//$times = array();
-$html = file_get_contents('https://parking.fullerton.edu/parkinglotcounts/Android.aspx');
 $time = time();
+try {
+  $html = @file_get_contents('https://parking.fullerton.edu/parkinglotcounts/Android.aspx');
+} catch (Exception $e) {
+  echo date('l jS \of F Y h:i:s A - FAILED TO GET DATA RETRYING...');
+  echo $e;
+  $j = 0;
+  for($i = 0; $i < count($structures); $i++)
+  {
+    $sql = "INSERT INTO ". $json_structures[$i-2] ." (avaliable, max, time_retrieved) VALUES ('null', '". $max_caps[$i-2] ."', '". $time ."')";
+    mysqli_query($conn, $sql);
+    $j++;
+  }
+mysqli_close($conn);
+}
 $data = array();
 $j = 0;
 for($i = 2; $i-2 < count($structures); $i++){
@@ -41,6 +53,7 @@ for($i = 2; $i-2 < count($structures); $i++){
 	mysqli_query($conn, $sql);
 	$j++;
 }
+mysqli_close($conn);
 
 for($i = 0; $i < count($structures); $i++)
 {

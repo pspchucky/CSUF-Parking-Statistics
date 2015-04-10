@@ -22,14 +22,23 @@ if(isset($_GET["structure"]) && isset($_GET["time"]) && isset($_GET["h"])){
 				}
 				date_default_timezone_set('America/Los_Angeles');
 				$limit = intval(date('i'));
-				$sql = "SELECT * FROM ( SELECT @row := @row +1 AS rownum, `avaliable`,`time_retrieved` FROM ( SELECT @row :=0) r, ". $structure_name ." ) ranked WHERE rownum % 6 = 1 AND `time_retrieved`<=". $_GET["time"] ." ORDER BY `ranked`.`rownum` ASC LIMIT " . $limit;	
+				$sql = "SELECT * FROM ( SELECT @row := @row +1 AS rownum, `avaliable`,`time_retrieved` FROM ( SELECT @row :=0) r, ". $structure_name ." ) ranked WHERE rownum % 6 = 1 AND `time_retrieved`<=". $_GET["time"] ." AND `time_retrieved`>=". (intval($_GET["time"])-(60*$limit)) ." ORDER BY `ranked`.`rownum` ASC LIMIT " . $limit;
 				$result = mysqli_query($conn, $sql);
 
 				if($result != false){
-					if (mysqli_num_rows($result) > 0) {
+          $rows = mysqli_num_rows($result);
+					if ($rows > 0) {
+            $rowCounter = 0;
 						// output data of each row
 						while($row = mysqli_fetch_assoc($result)) {
-							echo $row["avaliable"] . ",";
+              $rowCounter++;
+              if($rows == $rowCounter){
+                echo $row["avaliable"];
+              }else{
+                echo $row["avaliable"] . ",";
+                $string = $row["avaliable"]." - ".$row["time_retrieved"]." = ". $structure_name ."\n";
+                file_put_contents("debug.log", $string,FILE_APPEND);
+              }
 						}
 					} else {
 						echo "0 results";
