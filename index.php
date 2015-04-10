@@ -128,9 +128,8 @@
           helpers.addEvent(legendNode, 'mouseover', function(){
               var activeSegment = Line_Chart.datasets[index];
               var saveColor = activeSegment.fillColor;
-              activeSegment.fillColor = activeSegment.highlightColor;
+              activeSegment.fillColor = activeSegment.pointColor;
               Line_Chart.showTooltip([activeSegment]);
-              activeSegment.restore();
               activeSegment.fillColor = saveColor;
           });
       });
