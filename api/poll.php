@@ -6,7 +6,7 @@
 
 $servername = "localhost";
 $username = "root";
-$password = "HeyYoDaddyOh1776";
+$password = "";
 $dbname = "csuf_parking";
 
 // Create connection
