@@ -1,4 +1,4 @@
-# CSUF Parking Statistics - NodeJS-update branch
-Just bored out of my mind and why not play with some open and avaliable data and apply my programming knowledge :D
-
+# NodeJS-update branch
 This is a test of my newly aquired NodeJS knowledge.
+This is also a test of Microsoft Visual Studio 2015 RC's github integration.
+All code is inside a couple folders enjoy before this is merged with master :)
