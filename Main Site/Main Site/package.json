@@ -1,10 +1,18 @@
 {
-  "name": "NodejsWebApp1",
-  "version": "0.0.0",
-  "description": "NodejsWebApp1",
-  "main": "server.js",
   "author": {
-    "name": "Sergio",
-    "email": ""
-  }
+    "name": "Sergio German",
+    "email": "sergiogermanjr@gmail.com"
+  },
+  "dependencies": {
+    "express": "^4.13.3",
+    "orchestrate": "^0.4.7"
+  },
+  "description": "Visualization of the parking situation of California State University, Fullerton.",
+  "main": "server.js",
+  "name": "CSUF-Parking-Statistics",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/pspchucky/CSUF-Parking-Statistics.git"
+  },
+  "version": "1.0.0"
 }

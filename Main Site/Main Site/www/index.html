@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSUF Parking Statistics | Graph Test</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+</head>
+<body>
+  <div class="container">
+    <div class="logo">
+      <img src="assets/img/logo.png" alt="CSUF Parking Statistics Logo" class="logo">
+    </div>
+    <div class="graph">
+      <h1 align="center">Graph Test</h1>
+      <p align="center">Below is an interactive, responsive, HTML5 chart that draws the current hour's parking statistics.</p>
+      <div id="swag" class="ct-chart ct-perfect-fourth"></div>
+    </div>
+  </div>
+</body>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+<script type="text/javascript">
+var chart = new Chartist.Line('.ct-chart', {
+  labels: ['7:00 AM', '7:10 AM', '7:20 AM', '7:30 AM', '7:40 AM', '7:50 AM', '8:00 AM', '8:10 AM'],
+  // Naming the series with the series object array notation
+  series: [{
+    name: 'Nutwood',
+    data: [2439,2400,2333,2200,2039,1923,1633, undefined]
+  }, {
+    name: 'State College',
+    data: [1339,1249,1319,1329,1300,1212,1002, undefined]
+  }, {
+    name: 'Eastside',
+    data: [1365, 1200, 1021, 938, 738, 652, 494, undefined]
+  }]
+}, {
+  fullWidth: true,
+  // Within the series options you can use the series names
+  // to specify configuration that will only be used for the
+  // specific series.
+  series: {
+    'Nutwood': {
+      lineSmooth: Chartist.Interpolation.none(),
+      showArea: true
+    },
+    'State College': {
+      lineSmooth: Chartist.Interpolation.none(),
+      showArea: true
+    },
+    'Eastside': {
+      lineSmooth: Chartist.Interpolation.none(),
+      showArea: true
+    }
+  }
+});
+</script>
+</html>
